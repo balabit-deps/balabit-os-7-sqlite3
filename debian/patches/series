@@ -5,3 +5,9 @@
 10-665363-disable-malloc-usable-size.patch
 31-increase_SQLITE_MAX_DEFAULT_PAGE_SIZE_to_32k.patch
 02-use-packaged-lempar.c.patch
+CVE-2018-20346-and-CVE-2018-20506.patch
+CVE-2018-20505.patch
+CVE-2019-8457.patch
+CVE-2019-9936.patch
+CVE-2019-9937.patch
+CVE-2019-8457-string-interface.patch

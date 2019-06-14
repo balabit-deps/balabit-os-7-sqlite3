@@ -1,3 +1,39 @@
+sqlite3 (3.22.0-1ubuntu0.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: Integer overflow
+    - debian/patches/CVE-2018-20346-and-CVE-2018-20506.patch:
+      add extra defenses against strategically corrupt databases
+      in ext/fts3/fst3.c, ext/fts3/fts3_write.c, test/fts3corrupt4.test,
+      test/permutations.test.
+    - CVE-2018-20346
+    - CVE-2018-20506
+  * SECURITY UPDATE: Denial of service
+    - debian/patches/CVE-2018-20505.patch: remove assert
+      which fail due to a malformed PK and add check in
+      src/wherecode.c, test/rowvalue.test.
+    - CVE-2018-20505
+  * SECURITY UPDATE: heap out-of-bound read
+    - debian/patches/CVE-2019-8457.patch: enhance the
+      rtreenode() in ext/rtree/rtree.c.
+    - debian/patches/CVE-2019-8457-string-interface.patch:
+      add string interface in src/btree.c, src/build.c,
+      src/func.c, src/mutex.c, src/pragma.c, src/printf.c,
+      src/sqlite.h.in, src/sqliteInt.h, src/treeview.c,
+      src/vdbeaux.c, src/vdbetrace.c, src/wherecode.c.
+    - CVE-2019-8457
+  * security update: heap-buffer over-read
+    - debian/patches/cve-2019-9936.patch: add checks
+      in code in order to fix in ext/fts5/fts5_hash.c,
+      ext/fts5/test/fts5aa.test.
+    - CVE-2019-9936
+  * security update: NULL pointer dereference
+    - debian/patches/cve-2019-9937.patch: fix in
+      ext/fts5/fts5Int.h, ext/fts5/fts5_hash.c, ext/fts5/fts5_index.c,
+      ext/fts5/test/fts5aa.test.
+    - CVE-2019-9937
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Fri, 14 Jun 2019 15:02:21 -0300
+
 sqlite3 (3.22.0-1) unstable; urgency=medium
 
   * New upstream release (closes: #867387).
