@@ -11,3 +11,6 @@ CVE-2019-8457.patch
 CVE-2019-9936.patch
 CVE-2019-9937.patch
 CVE-2019-8457-string-interface.patch
+CVE-2019-16168.patch
+CVE-2019-5827-1.patch
+CVE-2019-5827-2.patch
