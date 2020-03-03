@@ -1,3 +1,63 @@
+sqlite3 (3.22.0-1ubuntu0.3) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: more shadow table corruption
+    - debian/patches/CVE-2019-13734_50.patch: more improvements to shadow
+      table corruption detection in ext/fts3/fts3.c, ext/fts3/fts3Int.h,
+      ext/fts3/fts3_write.c.
+    - CVE-2019-13734
+    - CVE-2019-13750
+  * SECURITY UPDATE: corrupt records in fts3
+    - debian/patches/CVE-2019-13751-pre1.patch: detect and prevent infinite
+      recursion in fts3SelectLeaf() due to a malformed FTS3 btree in
+      ext/fts3/fts3.c, test/fts4aa.test.
+    - debian/patches/CVE-2019-13751.patch: improve detection of corrupt
+      records in ext/fts3/fts3.c, ext/fts3/fts3_write.c.
+    - CVE-2019-13751
+  * SECURITY UPDATE: shadow table corruption
+    - debian/patches/CVE-2019-13752.patch: improved detection of corrupt
+      shadow tables in ext/fts3/fts3.c, ext/fts3/fts3Int.h,
+      ext/fts3/fts3_write.c.
+    - CVE-2019-13752
+  * SECURITY UPDATE: out of bounds read
+    - debian/patches/CVE-2019-13753.patch: remove a reachable NEVER() in
+      ext/fts3/fts3_write.c.
+    - CVE-2019-13753
+  * SECURITY UPDATE: SELECT DISTINCT involving a LEFT JOIN issue
+    - debian/patches/CVE-2019-19923.patch: continue to back away from the
+      LEFT JOIN optimization of check-in by disallowing query flattening if
+      the outer query is DISTINCT in src/select.c, test/join.test.
+    - CVE-2019-19923
+  * SECURITY UPDATE: certain parser-tree rewriting mishandling
+    - debian/patches/CVE-2019-19924.patch: properly handle errors in
+      src/expr.c, src/vdbeaux.c, src/window.c.
+    - CVE-2019-19924
+  * SECURITY UPDATE: NULL pathname mishandling in zipfileUpdate
+    - debian/patches/CVE-2019-19925.patch: properly handle pathname in
+      ext/misc/zipfile.c.
+    - CVE-2019-19925
+  * SECURITY UPDATE: multiSelect error handling issue
+    - debian/patches/CVE-2019-19926.patch: abort early due to prior errors
+      in src/select.c.
+    - CVE-2019-19926
+  * SECURITY UPDATE: embedded NULL filename mishandling
+    - debian/patches/CVE-2019-19959.patch: handle filenames that contain
+      embedded zeros in ext/misc/zipfile.c.
+    - CVE-2019-19959
+  * SECURITY UPDATE: selectExpander stack unwinding issue
+    - debian/patches/CVE-2019-20218-pre1.patch: make sure the WITH stack in
+      the Parse object is disabled following an error in src/select.c,
+      src/util.c, test/with3.test.
+    - debian/patches/CVE-2019-20218.patch: do not attempt to unwind the
+      WITH stack in the Parse object following an error in src/select.c,
+      test/altertab3.test.
+    - CVE-2019-20218
+  * SECURITY UPDATE: NULL pointer deref via generated column optimizations
+    - debian/patches/CVE-2020-9327.patch: take care when checking the
+      table of a TK_COLUMN expression node src/sqliteInt.h,
+      src/whereexpr.c.
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 03 Mar 2020 09:20:41 -0500
+
 sqlite3 (3.22.0-1ubuntu0.2) bionic-security; urgency=medium
 
   * SECURITY UPDATE: Severe division by zero
