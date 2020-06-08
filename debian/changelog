@@ -1,3 +1,25 @@
+sqlite3 (3.22.0-1ubuntu0.4) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: null pointer dereference
+    - debian/patches/CVE-2018-8740.patch: better error message text when
+      the schema is corrupted in src/build.c, src/prepare.c.
+    - CVE-2018-8740
+  * SECURITY UPDATE: integer overflow in sqlite3_str_vappendf
+    - debian/patches/CVE-2020-13434-pre1.patch: fix test/printf.test.
+    - debian/patches/CVE-2020-13434.patch: limit the "precision" of
+      floating-point to text conversions in src/printf.c, test/printf.test.
+    - CVE-2020-13434
+  * SECURITY UPDATE: use-after-free in fts3EvalNextRow
+    - debian/patches/CVE-2020-13630.patch: add fix to ext/fts3/fts3.c,
+      test/fts3snippet.test.
+    - CVE-2020-13630
+  * SECURITY UPDATE: NULL pointer dereference
+    - debian/patches/CVE-2020-13632.patch: fix issue in
+      ext/fts3/fts3_snippet.c, test/fts3matchinfo2.test.
+    - CVE-2020-13632
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 08 Jun 2020 11:07:38 -0400
+
 sqlite3 (3.22.0-1ubuntu0.3) bionic-security; urgency=medium
 
   * SECURITY UPDATE: more shadow table corruption
